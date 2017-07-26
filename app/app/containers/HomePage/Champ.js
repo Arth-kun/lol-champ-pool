@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 import ChampDescription from './ChampDescription';
 
-const Champ = ({ champ }) => {
+const Champ = ({ champ, lane }) => {
 
     const getChampDescriptions = (descriptions) => {
         if (descriptions && descriptions.length !== 0) {
@@ -16,10 +16,12 @@ const Champ = ({ champ }) => {
     }
 
     return (
-        <Link to={`${name}/${champ.name}`} className="list-group-item" style={{ paddingBottom:'0px' }}>
-            <h4 className="list-group-item-heading">{ champ.name }</h4>
-            { getChampDescriptions(champ.descriptions) }
-        </Link>
+        <div className="list-group-item">
+            <h4 className="list-group-item-heading" data-toggle="collapse" data-target={`#${champ.name + lane}Content`}>{ champ.name }</h4>
+            <div id={`${champ.name + lane}Content`}  className="list-group-item-text collapse">
+                { getChampDescriptions(champ.descriptions) }
+            </div>
+        </div>
     );
 }
 

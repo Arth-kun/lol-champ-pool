@@ -8,7 +8,7 @@ const Lane = ({ name, champList }) => {
     const getChampList = () => {
             if (champList && champList.length !== 0) {
                 return champList.map((champ, i) => {
-                    return <Champ key={ i } champ={champ} />
+                    return <Champ key={ i } champ={champ} lane={name} />
             });
         }
     }

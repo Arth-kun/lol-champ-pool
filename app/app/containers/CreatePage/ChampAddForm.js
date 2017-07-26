@@ -1,12 +1,12 @@
 import React from 'react';
 
-const ChampAddForm = ({ role }) => {
+const ChampAddForm = ({ role, lolChampList }) => {
     return (
         <form className="form-horizontal">
             <fieldset>
-                <legend>Add of a champion for the { role } role</legend>
+                <legend>Add a champion { role }</legend>
                 <div className="form-group">
-                 <label forHtml="select" className="col-lg-2 control-label">Champ Name</label>
+                 <label htmlFor="select" className="col-lg-2 control-label">Champion</label>
                  <div className="col-lg-10">
                    <select className="form-control" id="select">
                      <option>1</option>
@@ -18,21 +18,21 @@ const ChampAddForm = ({ role }) => {
                  </div>
                </div>
                 <div className="form-group">
-                 <label forHtml="textArea" className="col-lg-2 control-label">Why picking it</label>
+                 <label htmlFor="textArea" className="col-lg-2 control-label">Why picking it</label>
                  <div className="col-lg-10">
                    <textarea className="form-control" rows="3" id="textArea"></textarea>
                    <span className="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
                  </div>
                </div>
                <div className="form-group">
-                <label forHtml="textArea" className="col-lg-2 control-label">Against wich champ</label>
+                <label htmlFor="textArea" className="col-lg-2 control-label">Against wich champ</label>
                 <div className="col-lg-10">
                   <textarea className="form-control" rows="3" id="textArea"></textarea>
                   <span className="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
                 </div>
               </div>
               <div className="form-group">
-               <label forHtml="textArea" className="col-lg-2 control-label">With wich champ</label>
+               <label htmlFor="textArea" className="col-lg-2 control-label">With wich champ</label>
                <div className="col-lg-10">
                  <textarea className="form-control" rows="3" id="textArea"></textarea>
                  <span className="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
