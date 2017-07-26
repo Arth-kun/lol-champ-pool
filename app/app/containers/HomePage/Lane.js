@@ -1,30 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import Champ from './Champ';
+
 const Lane = ({ name, champList }) => {
 
-    const getChampDescriptionsList = (descriptions) => {
-        if (descriptions && descriptions.length !== 0) {
-            return descriptions.map((desc, i) => {
-                return (
-                    <div key={ i } className="list-group-item row">
-                        <div className="col-sm-3">{ desc.name }</div>
-                        <div className="col-sm-9">{ desc.content }</div>
-                    </div>
-                );
-            });
-        }
-    }
-
     const getChampList = () => {
-        if (champList.length !== 0) {
-            return champList.map((champ, i) => {
-                return (
-                    <Link to={`1/${name}/${champ.name}`} key={ i } className="list-group-item" style={{ paddingBottom:'0px' }}>
-                        <h4 className="list-group-item-heading">{ champ.name }</h4>
-                        { getChampDescriptionsList(champ.descriptions) }
-                    </Link>
-                );
+            if (champList && champList.length !== 0) {
+                return champList.map((champ, i) => {
+                    return <Champ key={ i } champ={champ} />
             });
         }
     }
