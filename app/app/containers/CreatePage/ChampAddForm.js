@@ -1,6 +1,9 @@
 import React from 'react';
 
-const ChampAddForm = ({ role, lolChampList }) => {
+import ChampSelect from './ChampSelect';
+
+const ChampAddForm = ({ role }) => {
+
     return (
         <form className="form-horizontal">
             <fieldset>
@@ -8,13 +11,7 @@ const ChampAddForm = ({ role, lolChampList }) => {
                 <div className="form-group">
                  <label htmlFor="select" className="col-lg-2 control-label">Champion</label>
                  <div className="col-lg-10">
-                   <select className="form-control" id="select">
-                     <option>1</option>
-                     <option>2</option>
-                     <option>3</option>
-                     <option>4</option>
-                     <option>5</option>
-                   </select>
+                 <ChampSelect />
                  </div>
                </div>
                 <div className="form-group">
