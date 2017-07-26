@@ -12,14 +12,9 @@ import messages from './messages';
 import List from './List';
 import ListItem from './ListItem';
 import ListItemTitle from './ListItemTitle';
+import ChampAddForm from './ChampAddForm';
 
 export default class FeaturePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
-
-  // Since state and props are static,
-  // there's no need to re-render this component
-  shouldComponentUpdate() {
-    return false;
-  }
 
   render() {
     return (
@@ -27,12 +22,12 @@ export default class FeaturePage extends React.Component { // eslint-disable-lin
         <Helmet
           title="Create Page"
           meta={[
-            { name: 'description', content: 'Feature page of React.js Boilerplate application' },
+            { name: 'description', content: 'Creation Page of champion pool manager' },
           ]}
         />
-        <H1>
-          <FormattedMessage {...messages.header} />
-        </H1>
+        <br />
+        <ChampAddForm role={ this.props.routeParams.id } />
+        <br />
       </div>
     );
   }

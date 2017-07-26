@@ -39,7 +39,7 @@ export default function createRoutes(store) {
         importModules.catch(errorLoading);
       },
     }, {
-      path: '/create',
+      path: '/add/:id',
       name: 'create',
       getComponent(nextState, cb) {
         import('containers/CreatePage')
