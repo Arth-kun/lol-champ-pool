@@ -45,7 +45,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
     return (
       <article>
         <Helmet
-          title="Home Page"
+          title="Champion's Pool"
           meta={[
             { name: 'description', content: 'Lol Champion pool Manager' },
           ]}

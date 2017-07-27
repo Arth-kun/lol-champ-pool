@@ -16,10 +16,12 @@ class ChampSelect extends React.Component {
         this.componentWillMount = this.componentWillMount.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.getChampById = this.getChampById.bind(this);
+
+        this.apiKey ='RGAPI-842d3799-847b-4650-9b01-7b258e008635';
     }
 
     componentWillMount() {
-        const lolChampApiUrl = 'https://euw1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&dataById=true&api_key=RGAPI-a302085f-a1c4-4529-ba66-ee4aabd1a0ff'
+        const lolChampApiUrl = 'https://euw1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&dataById=true&api_key='+this.apiKey;
 
         axios.get(lolChampApiUrl)
         .then((response) => {
@@ -42,7 +44,7 @@ class ChampSelect extends React.Component {
     }
 
     getChampById(champId) {
-        const lolChampByIdApiUrl = `https://euw1.api.riotgames.com/lol/static-data/v3/champions/${champId}?locale=en_US&tags=image&api_key=RGAPI-a302085f-a1c4-4529-ba66-ee4aabd1a0ff`;
+        const lolChampByIdApiUrl = `https://euw1.api.riotgames.com/lol/static-data/v3/champions/${champId}?locale=en_US&tags=image&api_key=${this.apiKey}`;
 
         axios.get(lolChampByIdApiUrl)
         .then((response) => {
@@ -58,10 +60,13 @@ class ChampSelect extends React.Component {
 
     render() {
 
+        const imageChampUrl = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/';
+
         const champList = this.state.lolChampList;
         const champSelected = this.state.champSelected;
-        const title = champSelected.title;
-        const imageChampUrl = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/';
+
+        const title = champSelected ? champSelected.title : '';
+        const image = champSelected.image ? champSelected.image.full : '';
 
         let selectItem = [];
         let i = 0;
@@ -73,7 +78,7 @@ class ChampSelect extends React.Component {
 
         return (
             <span>
-                <Img src={imageChampUrl + champSelected.image.full} alt="Champ selected image" />
+                { image ? <Img src={imageChampUrl + image} alt="Champ selected image sprite" /> : '' }
                 <br />
                 <select className="form-control" id="select" onChange={this.handleChange}>
                     { selectItem }
