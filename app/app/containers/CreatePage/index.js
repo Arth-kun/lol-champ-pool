@@ -13,7 +13,7 @@ import messages from './messages';
 import List from './List';
 import ListItem from './ListItem';
 import ListItemTitle from './ListItemTitle';
-import ChampAddForm from './ChampAddForm';
+import ChampAddForm from 'components/ChampAddForm/index';
 
 export default class CreatePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
 

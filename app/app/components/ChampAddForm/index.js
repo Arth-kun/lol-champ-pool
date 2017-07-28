@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-import ChampSelect from './ChampSelect';
+import ChampSelect from 'containers/ChampSelect/index';
 
 const ChampAddForm = ({ role }) => {
 
@@ -8,6 +9,18 @@ const ChampAddForm = ({ role }) => {
         <form className="form-horizontal">
             <fieldset>
                 <legend>Add a champion { role }</legend>
+                <div className="form-group">
+                 <label htmlFor="select" className="col-lg-2 control-label">Lane</label>
+                 <div className="col-lg-10">
+                 <select className="form-control" id="select">
+                    <option value='top'>Top</option>
+                    <option value='jungle'>Jungle</option>
+                    <option value='mid'>Mid</option>
+                    <option value='adc'>Adc</option>
+                    <option value='support'>Support</option>
+                 </select>
+                 </div>
+               </div>
                 <div className="form-group">
                  <label htmlFor="select" className="col-lg-2 control-label">Champion</label>
                  <div className="col-lg-10">
@@ -37,8 +50,8 @@ const ChampAddForm = ({ role }) => {
              </div>
              <div className="form-group">
               <div className="col-lg-10 col-lg-offset-2">
-                <button type="reset" className="btn btn-default">Back to List</button>
-                <button type="submit" className="btn btn-primary">Add Champ</button>
+                <Link to='/' type="reset" className="btn btn-default">Back to List</Link>
+                <Link type="submit" className="btn btn-primary">Add Champ</Link>
               </div>
             </div>
             </fieldset>

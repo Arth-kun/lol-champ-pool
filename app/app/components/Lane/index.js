@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router';
 
-import Champ from './Champ';
+import Champ from '../Champ/index';
 
 const Lane = ({ name, champList }) => {
 
@@ -17,7 +16,6 @@ const Lane = ({ name, champList }) => {
         <div className="panel panel-primary">
             <div className="panel-heading" data-toggle="collapse" data-target={`#${name}Content`}>{ name }</div>
             <div id={`${name}Content`} className="list-group collapse">
-                <Link to={`add/${name}`} className="btn btn-success btn-md btn-block">Add a champion</Link>
                 { getChampList() }
             </div>
         </div>

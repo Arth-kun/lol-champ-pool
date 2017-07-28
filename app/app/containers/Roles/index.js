@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-import Lane from './Lane';
+import Lane from 'components/Lane/index';
 
 const Roles = () => {
 
@@ -58,6 +59,8 @@ const Roles = () => {
 
     return (
         <div>
+            <Link to='add' className="btn btn-success btn-lg btn-block">Add a champion</Link>
+            <br />
             <Lane name='Top' champList={ champListTop } />
             <Lane name='Jungle' champList={ champListJungle } />
             <Lane name='Mid' champList={ champListMid } />

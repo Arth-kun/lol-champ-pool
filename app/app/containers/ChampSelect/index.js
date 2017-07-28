@@ -77,14 +77,15 @@ class ChampSelect extends React.Component {
         }
 
         return (
-            <span>
-                { image ? <Img src={imageChampUrl + image} alt="Champ selected image sprite" /> : '' }
-                <br />
-                <select className="form-control" id="select" onChange={this.handleChange}>
-                    { selectItem }
-                </select>
-                <span className="help-block">{ title ? title.charAt(0).toUpperCase() + title.slice(1) : '' }</span>
-            </span>
+            <dl className="dl-horizontal">
+                <dt>{ image ? <Img src={imageChampUrl + image} alt="Champ selected image sprite" /> : '' }</dt>
+                <dd>
+                    <select className="form-control" id="select" onChange={this.handleChange}>
+                        { selectItem }
+                    </select>
+                    <span className="help-block">{ title ? title.charAt(0).toUpperCase() + title.slice(1) : '' }</span>
+                </dd>
+            </dl>
         );
     }
 
